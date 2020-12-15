@@ -18,6 +18,38 @@ namespace SodaMachine
             Wallet = new Wallet();
             Backpack = new Backpack();
         }
+        
+        public void userinput()
+        {
+            bool goodInput = false;
+            while (!goodInput)
+            {
+
+                Console.WriteLine();
+                string userInput = Console.ReadLine();
+
+
+
+                switch (userInput)
+                {
+                    case "1":
+                    case "one":
+                        goodInput = true;       
+                        break;
+                    case "2":
+                    case "two":
+                        goodInput = true;
+                        break;
+                    default:
+                        Console.WriteLine("invalidchoice");
+                        break;
+
+                }
+            }
+
+
+        }
+        
         //Member Methods (Can Do)
 
         //This method will be the main logic for a customer to retrieve coins form their wallet.

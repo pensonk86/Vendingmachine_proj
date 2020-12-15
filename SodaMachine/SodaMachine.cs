@@ -67,7 +67,7 @@ namespace SodaMachine
         //If the payment does not meet the cost of the soda: dispense payment back to the customer.
         private void CalculateTransaction(List<Coin> payment, Can chosenSoda, Customer customer)
         {
-           
+            bool something = RegisterHasCoin("Dime");
         }
         //Takes in the value of the amount of change needed.
         //Attempts to gather all the required coins from the sodamachine's register to make change.
@@ -75,19 +75,30 @@ namespace SodaMachine
         //If the change cannot be made, return null.
         private List<Coin> GatherChange(double changeValue)
         {
-            
+           
         }
         //Reusable method to check if the register has a coin of that name.
         //If it does have one, return true.  Else, false.
         private bool RegisterHasCoin(string name)
         {
-           
+            for (int i = 0; i < _register.Count; i++)
+            {
+                if (_register[i].Name == name)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         //Reusable method to return a coin from the register.
         //Returns null if no coin can be found of that name.
         private Coin GetCoinFromRegister(string name)
         {
             
+            
+                
+
+
         }
         //Takes in the total payment amount and the price of can to return the change amount.
         private double DetermineChange(double totalPayment, double canPrice)
@@ -97,12 +108,21 @@ namespace SodaMachine
         //Takes in a list of coins to returnt he total value of the coins as a double.
         private double TotalCoinValue(List<Coin> payment)
         {
-           
+            double coinValuesTotal = 0;
+            foreach (Coin item in payment)
+            {
+                coinValuesTotal += item.Value;
+            }
+            return coinValuesTotal;
+
         }
+        double valueOfCoinsInWallet = TotalCoinValue(Wallet.coinList);
         //Puts a list of coins into the soda machines register.
         private void DepositCoinsIntoRegister(List<Coin> coins)
         {
-           
+            
+
+
         }
     }
 }

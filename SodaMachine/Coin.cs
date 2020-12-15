@@ -15,7 +15,7 @@ namespace SodaMachine
         public double Value
         {
             get
-            {
+            { 
                 return value;
             }
 
