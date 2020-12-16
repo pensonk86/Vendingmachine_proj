@@ -26,13 +26,19 @@ namespace SodaMachine
         //A method to fill the sodamachines register with coin objects.
         public void FillRegister()
         {
-           
+            this.DepositCoinsIntoRegister(_register);
         }
         //A method to fill the sodamachines inventory with soda can objects.
         public void FillInventory()
         {
-            
+            this.GetSodaFromInventory(_inventory);
         }
+
+        private void GetSodaFromInventory(List<Can> inventory)
+        {
+            throw new NotImplementedException();
+        }
+
         //Method to be called to start a transaction.
         //Takes in a customer which can be passed freely to which ever method needs it.
         public void BeginTransaction(Customer customer)
@@ -50,22 +56,31 @@ namespace SodaMachine
         //pass payment to the calculate transaction method to finish up the transaction based on the results.
         private void Transaction(Customer customer)
         {
-           
+            Console.WriteLine("Welcome!");
+            Console.WriteLine("Please select which soda you like");
+            Console.ReadLine();
         }
         //Gets a soda from the inventory based on the name of the soda.
         private Can GetSodaFromInventory(string nameOfSoda)
         {
-          
-        }
-
-        //This is the main method for calculating the result of the transaction.
-        //It takes in the payment from the customer, the soda object they selected, and the customer who is purchasing the soda.
-        //This is the method that will determine the following:
-        //If the payment is greater than the price of the soda, and if the sodamachine has enough change to return: Dispense soda, and change to the customer.
-        //If the payment is greater than the cost of the soda, but the machine does not have ample change: Dispense payment back to the customer.
-        //If the payment is exact to the cost of the soda:  Dispense soda.
-        //If the payment does not meet the cost of the soda: dispense payment back to the customer.
-        private void CalculateTransaction(List<Coin> payment, Can chosenSoda, Customer customer)
+            foreach (Can item in _inventory)
+            {
+                if (_inventory.name == nameOfSoda)
+                {
+                    return true;
+                }
+            }
+            return false;
+            
+               
+            //This is the main method for calculating the result of the transaction.
+            //It takes in the payment from the customer, the soda object they selected, and the customer who is purchasing the soda.
+            //This is the method that will determine the following:
+            //If the payment is greater than the price of the soda, and if the sodamachine has enough change to return: Dispense soda, and change to the customer.
+            //If the payment is greater than the cost of the soda, but the machine does not have ample change: Dispense payment back to the customer.
+            //If the payment is exact to the cost of the soda:  Dispense soda.
+            //If the payment does not meet the cost of the soda: dispense payment back to the customer.
+            private void CalculateTransaction(List<Coin> payment, Can chosenSoda, Customer customer)
         {
             bool something = RegisterHasCoin("Dime");
         }
@@ -94,10 +109,14 @@ namespace SodaMachine
         //Returns null if no coin can be found of that name.
         private Coin GetCoinFromRegister(string name)
         {
-            
-            
-                
-
+            for (int i = 0; i < _register.Count; i++)
+            {
+                if (_register[i].Name == name)
+                {
+                    return null;
+                }
+            }
+            return null;
 
         }
         //Takes in the total payment amount and the price of can to return the change amount.
