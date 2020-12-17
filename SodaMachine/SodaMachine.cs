@@ -56,14 +56,6 @@ namespace SodaMachine
             }
 
 
-
-
-
-
-
-
-           
-
     
         }     
         //A method to fill the sodamachines inventory with soda can objects.
@@ -194,13 +186,12 @@ namespace SodaMachine
         //Takes in the total payment amount and the price of can to return the change amount.
         private double DetermineChange(double totalPayment, double canPrice)
         {
-            while (true)
-            {
 
-            }
+           double subtract = totalPayment -= canPrice;
 
-            
         }
+         
+
         //Takes in a list of coins to returnt he total value of the coins as a double.
         private double TotalCoinValue(List<Coin> payment)
         {
@@ -213,11 +204,22 @@ namespace SodaMachine
 
         }
         double valueOfCoinsInWallet = TotalCoinValue(Wallet.coinList);
+        
+        
         //Puts a list of coins into the soda machines register.
         private void DepositCoinsIntoRegister(List<Coin> coins)
         {
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < _register.Count; i++)
             {
+
+                if (_register[i].Count = DepositCoinsIntoRegister)
+                {
+                    return _register[i];
+                }
+                return false;
+
+
+
 
             }
 
