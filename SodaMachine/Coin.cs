@@ -11,6 +11,7 @@ namespace SodaMachine
         //Member Variables (Has A)
         protected double value;
         public string Name;
+        internal object count;
 
         public double Value
         {
